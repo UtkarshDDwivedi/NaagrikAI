@@ -254,11 +254,7 @@ export default function App() {
             formData.append(document.key, restoredFile);
           });
 
-          await api.post("/upload-documents", formData, {
-            headers: {
-              "Content-Type": "multipart/form-data"
-            }
-          });
+          await api.post("/upload-documents", formData);
         }
 
         let syncedValidation = null;
@@ -528,11 +524,7 @@ export default function App() {
           formData.append(key, value);
         });
 
-      await api.post("/upload-documents", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      });
+      await api.post("/upload-documents", formData);
 
       const response = await api.post("/validate-checklist", {
         application_id: applicationId,
