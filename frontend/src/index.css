@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0f172a;
+  background: #edf1f5;
+  font-family: "Noto Sans Devanagari", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #edf1f5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .gov-input {
+    @apply mt-1 w-full rounded-md border border-gov-border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-gov-primary focus:ring-1 focus:ring-gov-primary;
+  }
+
+  .gov-button-primary {
+    @apply rounded-md bg-gov-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-[#db7f1b] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .gov-button-secondary {
+    @apply rounded-md border border-[#d97706] bg-[#fff4e8] px-4 py-2 text-sm font-semibold text-[#a64b00] transition hover:bg-[#ffe7c7] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .gov-table-action {
+    @apply rounded px-3 py-1 text-xs font-semibold;
+  }
+
+  .gov-table-action-success {
+    @apply bg-[#edf7ee] text-[#2e7d32];
+  }
+
+  .gov-table-action-danger {
+    @apply bg-[#fdeeee] text-[#c62828];
+  }
+
+  .gov-table-action-warning {
+    @apply bg-[#fff7e8] text-[#a66300];
+  }
+}
+
+@keyframes gov-marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.gov-marquee {
+  animation: gov-marquee 24s linear infinite;
+}
